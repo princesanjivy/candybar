@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,6 +27,7 @@ import java.util.List;
 import candybar.lib.R;
 import candybar.lib.adapters.LauncherAdapter;
 import candybar.lib.applications.CandyBarApplication;
+import candybar.lib.helpers.AdmobHelper;
 import candybar.lib.items.Icon;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.AsyncTaskBase;
@@ -80,6 +82,11 @@ public class ApplyFragment extends Fragment {
         }
 
         mAsyncTask = new LaunchersLoader().executeOnThreadPool();
+
+        String id = getContext().getResources().getString(R.string.admob_interstitial_id);
+
+        AdmobHelper admobHelper = new AdmobHelper(id);
+        admobHelper.loadAd(getActivity(), getActivity());
     }
 
     @Override

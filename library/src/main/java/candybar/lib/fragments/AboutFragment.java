@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,8 +17,10 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import com.danimahardhika.android.helpers.core.ViewHelper;
 
 import candybar.lib.R;
+import candybar.lib.activities.CandyBarMainActivity;
 import candybar.lib.adapters.AboutAdapter;
 import candybar.lib.applications.CandyBarApplication;
+import candybar.lib.helpers.AdmobHelper;
 import candybar.lib.preferences.Preferences;
 
 /*
@@ -66,6 +69,11 @@ public class AboutFragment extends Fragment {
         mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(
                 spanCount, StaggeredGridLayoutManager.VERTICAL));
         mRecyclerView.setAdapter(new AboutAdapter(requireActivity(), spanCount));
+
+        String id = getContext().getResources().getString(R.string.admob_interstitial_id);
+
+        AdmobHelper admobHelper = new AdmobHelper(id);
+        admobHelper.loadAd(getActivity(), getActivity());
     }
 
     @Override

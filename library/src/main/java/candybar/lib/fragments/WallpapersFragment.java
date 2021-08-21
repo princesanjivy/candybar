@@ -49,6 +49,7 @@ import candybar.lib.R;
 import candybar.lib.adapters.WallpapersAdapter;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.databases.Database;
+import candybar.lib.helpers.AdmobHelper;
 import candybar.lib.helpers.JsonHelper;
 import candybar.lib.helpers.TapIntroHelper;
 import candybar.lib.items.Wallpaper;

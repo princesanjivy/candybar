@@ -49,6 +49,9 @@ import com.danimahardhika.android.helpers.core.SoftKeyboardHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.danimahardhika.android.helpers.license.LicenseHelper;
 import com.danimahardhika.android.helpers.permission.PermissionCode;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.navigation.NavigationView;
 
 import java.io.File;
@@ -155,6 +158,11 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         final boolean isDarkTheme = prevIsDarkTheme = ThemeHelper.isDarkTheme(this);
 
         final int nightMode;
+
+        // Admob initialize
+        MobileAds.initialize(this, initializationStatus -> {
+        });
+
         switch (Preferences.get(this).getTheme()) {
             case LIGHT:
                 nightMode = AppCompatDelegate.MODE_NIGHT_NO;

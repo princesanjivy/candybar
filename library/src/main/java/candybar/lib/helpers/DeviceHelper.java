@@ -6,8 +6,8 @@ import android.os.Build;
 import android.util.DisplayMetrics;
 
 import androidx.annotation.NonNull;
+import androidx.multidex.BuildConfig;
 
-import candybar.lib.BuildConfig;
 import candybar.lib.R;
 
 /*

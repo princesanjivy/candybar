@@ -33,6 +33,7 @@ import candybar.lib.adapters.SettingsAdapter;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.databases.Database;
 import candybar.lib.fragments.dialog.IntentChooserFragment;
+import candybar.lib.helpers.AdmobHelper;
 import candybar.lib.helpers.IconsHelper;
 import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.helpers.RequestHelper;
@@ -88,6 +89,11 @@ public class SettingsFragment extends Fragment {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         initSettings();
+
+        String id = getContext().getResources().getString(R.string.admob_interstitial_id);
+
+        AdmobHelper admobHelper = new AdmobHelper(id);
+        admobHelper.loadAd(getActivity(), getActivity());
     }
 
     public void restorePurchases(List<String> productsId, String[] premiumRequestProductsId,

@@ -34,6 +34,7 @@ import java.util.List;
 
 import candybar.lib.R;
 import candybar.lib.adapters.FAQsAdapter;
+import candybar.lib.helpers.AdmobHelper;
 import candybar.lib.items.FAQs;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.AsyncTaskBase;
@@ -93,6 +94,11 @@ public class FAQsFragment extends Fragment {
         mFastScroll.attachRecyclerView(mRecyclerView);
 
         mAsyncTask = new FAQsLoader().executeOnThreadPool();
+
+        String id = getContext().getResources().getString(R.string.admob_interstitial_id);
+
+        AdmobHelper admobHelper = new AdmobHelper(id);
+        admobHelper.loadAd(getActivity(), getActivity());
     }
 
     @Override

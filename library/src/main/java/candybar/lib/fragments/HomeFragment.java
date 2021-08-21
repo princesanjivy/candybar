@@ -23,6 +23,7 @@ import candybar.lib.R;
 import candybar.lib.activities.CandyBarMainActivity;
 import candybar.lib.adapters.HomeAdapter;
 import candybar.lib.applications.CandyBarApplication;
+import candybar.lib.helpers.AdmobHelper;
 import candybar.lib.helpers.TapIntroHelper;
 import candybar.lib.helpers.WallpaperHelper;
 import candybar.lib.items.Home;
@@ -69,6 +70,11 @@ public class HomeFragment extends Fragment implements HomeListener {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        String id = getContext().getResources().getString(R.string.admob_interstitial_id);
+
+        AdmobHelper admobHelper = new AdmobHelper(id);
+        admobHelper.loadAd(getActivity(), getActivity());
 
         mManager = new StaggeredGridLayoutManager(
                 requireActivity().getResources().getInteger(R.integer.home_column_count),
