@@ -71,11 +71,6 @@ public class HomeFragment extends Fragment implements HomeListener {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        String id = getContext().getResources().getString(R.string.admob_interstitial_id);
-
-        AdmobHelper admobHelper = new AdmobHelper(id);
-        admobHelper.loadAd(getActivity(), getActivity());
-
         mManager = new StaggeredGridLayoutManager(
                 requireActivity().getResources().getInteger(R.integer.home_column_count),
                 StaggeredGridLayoutManager.VERTICAL);
