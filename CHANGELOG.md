@@ -1,3 +1,23 @@
+# v3.13.2
+- Updated Android Gradle Plugin
+- Analog clock is now resizable
+- Added Lawnchair 12
+- Fixed `Broken drawables` in report bugs
+- Added support for using donation links
+
+# v3.13.1
+- Fix SSL error with Arctic Manager
+- Added Norwegian language. Thanks to Allan Nordhøy ([@comradekingu](https://github.com/comradekingu)) for the contribution.
+
+# v3.13.0
+- Added support for previewing Kustom presets
+- Fixed `Broken drawable` in bug reporter
+
+# v3.12.1
+- Use English date in icon requests' ZIP name
+- Fix issue with launcher apply
+- Upgraded to OneSignal 4
+
 # v3.12.0
 - Update Gradle and AGP
 - Added Hyperion launcher
